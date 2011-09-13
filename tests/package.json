@@ -1,0 +1,23 @@
+{
+  "name": "Bits",
+  "description": "Simple and fast bit set implemention in JavaScript.",
+  "version": "1.0",
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://en.wikipedia.org/wiki/MIT_License"
+  }],
+  "maintainers": [{
+    "name": "Iván -DrSlump- Montes",
+    "web": "http://pollinimini.net/",
+    "email": "drslump@pollinimini.net"
+  }],
+  "repositories": [{
+    "type": "git",
+    "url": "http://github.com/drslump/bits-js"
+  }],
+  "dependencies": [
+  ],
+  "directories": {
+    "lib": "lib"
+  }
+}
