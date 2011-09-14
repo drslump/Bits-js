@@ -1,0 +1,44 @@
+<html>
+<head>
+    <script src="vendor/benchmark.js"></script> 
+
+    <script src="./../lib/Bits.js"></script>
+
+    <script>
+        // Mock require()
+        function require(path){
+            path = path.toLowerCase();
+            if (-1 !== path.indexOf('bench')) 
+                return Benchmark;
+            else if (-1 !== path.indexOf('bits'))
+                return { Bits: Bits };
+            else
+                throw new Error('Path ' + path + ' is not supported');
+        }
+
+        window.onload = function(){
+       };
+    </script>
+</head>
+<body>
+    <applet code="nano" archive="vendor/nano.jar"></applet>
+
+    <h3>Log</h3>
+    <pre id="log"></pre>
+    <hr/>
+
+    <script>
+        // Override console.log to show messages in the Html body
+        var origFn = console.log,
+            html = document.getElementById('log');
+
+        console.log = function(msg) {
+            origFn && origFn.apply(console, arguments);
+            html.innerHTML += msg + '\n';
+        }
+    </script>
+
+    <script src="Bits.bench.js"></script>
+
+</body>
+</html>

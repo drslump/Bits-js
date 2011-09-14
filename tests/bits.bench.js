@@ -1,9 +1,11 @@
+(function(){
+
 var Benchmark = require('benchmark'),
     Bits = require('./../lib/Bits.js').Bits;
 
 var bits = new Bits();
 
-var suite = new Benchmark.Suite;
+var suite = new Benchmark.Suite();
 
 suite
 .add('Sparse Bits#set', function(){
@@ -44,3 +46,4 @@ suite
 
 .run();
 
+})();
