@@ -21,6 +21,12 @@ describe('Bits', function(){
             expect(bits.test(10)).toEqual(true);
             bits.set(100);
             expect(bits.test(100)).toEqual(true);
+
+            // check an offset above the 32bit range
+            // https://github.com/drslump/Bits-js/issues/1
+            bits.set(4294965296);
+            expect(bits.test(4294965296)).toEqual(true);
+            expect(bits.buckets[Math.floor(4294965296/32)]).toBeGreaterThan(0);
         });
 
         it('should unset bits', function(){
